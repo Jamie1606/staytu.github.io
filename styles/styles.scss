@@ -1,0 +1,15 @@
+@import 'theme';
+
+#header {
+    background-color: $theme1-bg;
+    color: $theme1-fg;
+}
+
+h1 {
+    color: $fg;
+}
+
+#footer {
+    background-color: $theme2-bg;
+    color: $theme2-fg;
+}
