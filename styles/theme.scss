@@ -1,7 +1,16 @@
-$theme1-bg: #426ff5;
+$theme1-bg: #5186db;
 $theme1-fg: #ffffff;
 $theme2-bg: #000000;
 $theme2-fg: #ffffff;
 
-$bg: #ffffff;
-$fg: #000000;
+@mixin text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+@mixin box-shadow {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
+}
+
+@mixin svg-shadow {
+    filter: drop-shadow( 2px 2px 5px rgba(0, 0, 0, .5));
+}

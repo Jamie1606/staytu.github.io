@@ -1,9 +1,123 @@
-#header {
-  background-color: #426ff5;
-  color: #ffffff; }
+@font-face {
+  font-family: Roboto;
+  src: url(roboto-regular.ttf); }
+* {
+  font-family: Roboto; }
 
-h1 {
-  color: #000000; }
+/* Header expanded at the top of the page */
+#header {
+  position: fixed;
+  margin: -8px -13px;
+  width: calc(100% + 10px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  height: 120px;
+  background-color: #557bb9;
+  color: #ffffff;
+  /* Container positioning */
+  /* Styles for link buttons */ }
+  #header .logo {
+    margin-left: 30px;
+    height: 100%;
+    float: left; }
+    #header .logo path, #header .logo ellipse {
+      fill: #ffffff; }
+  #header .box-1 {
+    margin-top: 80px;
+    margin-left: 30px;
+    float: left; }
+  #header .box-2 {
+    margin-top: 10px;
+    margin-right: 20px;
+    float: right; }
+  #header .box-1 a, #header .box-2 a {
+    padding: 6px;
+    height: 20px;
+    background-color: transparent;
+    color: #f2f2f2;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 20px;
+    vertical-align: middle;
+    transition: 0.15s;
+    float: left; }
+    #header .box-1 a svg, #header .box-2 a svg {
+      width: 30px;
+      height: 20px;
+      fill: #f2f2f2; }
+    #header .box-1 a:hover, #header .box-2 a:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: white; }
+      #header .box-1 a:hover svg, #header .box-2 a:hover svg {
+        fill: white; }
+  #header #menu {
+    margin-left: 10px;
+    display: none; }
+  #header #dropdown-nav {
+    background-color: #c1cfe5;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    display: none; }
+    #header #dropdown-nav li {
+      border-top: 1px solid #e9ecf1;
+      background-color: transparent;
+      padding: 6px;
+      list-style: none;
+      text-align: center;
+      transition: 0.15s; }
+      #header #dropdown-nav li a {
+        color: #223552;
+        font-size: 1.1em;
+        text-decoration: none;
+        transition: 0.15s; }
+      #header #dropdown-nav li:hover {
+        background-color: rgba(0, 0, 0, 0.2); }
+        #header #dropdown-nav li:hover a {
+          color: #ffffff; }
+
+/* Minimized navigation bar */
+/* Responsive styles */
+#header {
+  transition: 0.2s; }
+  @media only screen and (max-width: 800px) {
+    #header {
+      height: 50px; }
+      #header .logo {
+        margin-top: -7px;
+        margin-left: 10px;
+        height: 120%; }
+      #header .box-1, #header .box-2 {
+        margin-top: 10px; }
+      #header .box-1 {
+        margin-left: 0; } }
+  @media only screen and (max-width: 600px) {
+    #header .box-1 {
+      display: none; }
+    #header #menu {
+      display: block; } }
+  #header .logo, #header .box-1, #header .box-2 {
+    transition: 0.2s; }
+
+#header[minimize="1"] {
+  position: fixed;
+  margin: -8px -13px;
+  width: calc(100% + 10px);
+  height: 50px; }
+  #header[minimize="1"] .logo {
+    margin-top: -7px;
+    margin-left: 10px;
+    height: 120%; }
+  #header[minimize="1"] .box-1, #header[minimize="1"] .box-2 {
+    margin-top: 10px; }
+  #header[minimize="1"] .box-1 {
+    margin-left: 0; }
+
+/* A spacer behind the floating header */
+#header-spacer {
+  margin-bottom: -20px;
+  height: 120px; }
+  @media only screen and (max-width: 800px) {
+    #header-spacer {
+      height: 60px; } }
 
 #footer {
   background-color: #000000;
