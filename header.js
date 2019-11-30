@@ -63,8 +63,10 @@ document.addEventListener("click", (evt) => {
 
 
 // DOM manipulation after the content is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     let header = document.getElementById("header");
+    const response = await fetch("https://staytu.github.io/header.html");
+    header.innerHTML = await response.text();
     
     // For non-home pages, a spacer is added.
     if(!headerHome) {
