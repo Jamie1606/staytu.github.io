@@ -1,0 +1,168 @@
+@import 'theme';
+
+@mixin header-fixed {
+    position: fixed;
+    width: 100%;
+}
+
+/* Header expanded at the top of the page */
+#header {
+    $bg: darken($theme1-bg, 3%);
+    $bg: desaturate($bg, 8%);
+    $fg: $theme1-fg;
+    
+    @include header-fixed;
+    
+    height: 100px;
+    background-color: $bg;
+    color: $fg;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    
+    .logo {
+        margin-left: 30px;
+        height: 100%;
+        path, ellipse {
+            fill: $fg;
+        }
+        float: left;
+    }
+    
+    /* Container positioning */
+    .box-1 {
+        margin-top: 60px;
+        margin-left: 40px;
+        float: left;
+    }
+    
+    .box-2 {
+        margin-top: 10px;
+        margin-right: 20px;
+        float: right;
+    }
+    
+    /* Styles for link buttons */
+    .box-1 a, .box-2 a {
+        padding: 6px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0);
+        color: darken($fg, 5%);
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        line-height: 20px;
+        vertical-align: middle;
+        
+        svg {
+            width: 30px;
+            height: 20px;
+            fill: darken($fg, 5%);
+        }
+        
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            color: lighten($fg, 5%);
+            svg {
+                fill: lighten($fg, 5%);
+            }
+        }
+        transition: 0.15s;
+        float: left;
+    }
+    
+    #menu {
+        margin-left: 10px;
+        display: none;
+    }
+    
+    #dropdown-nav {
+        display: block;
+        position: fixed;
+        margin-top: 50px;
+        width: 100%;
+        height: 135px;
+        overflow: hidden;
+        background-color: lighten($bg, 30%);
+        @include box-shadow;
+        
+        ul {
+            margin: 0;
+        }
+        li {
+            $a: desaturate($bg, 20%);
+            $a: lighten($a, 40%);
+            border-top: 1px solid $a;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 6px;
+            list-style: none;
+            text-align: center;
+            a {
+                color: darken($bg, 30%);
+                font-size: 1.1em;
+                text-decoration: none;
+                transition: 0.15s;
+            }
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.2);
+                a {
+                    color: $fg;
+                }
+            }
+            transition: 0.15s;
+        }
+        transition: 0.2s;
+    }
+    
+    #dropdown-nav[drop="0"] {
+        height: 0;
+    }
+}
+
+/* Minimized navigation bar */
+@mixin header-minimized {
+    height: 50px;
+    .logo {
+        margin-top: -7px;
+        margin-left: 10px;
+        height: 120%
+    }
+    .box-1, .box-2 {
+        margin-top: 10px;
+    }
+    .box-1 {
+        margin-left: 0;
+    }
+}
+
+/* Responsive styles */
+#header {
+    @media only screen and (max-width: 800px) {
+        @include header-minimized;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .box-1 {
+            display: none;
+        }
+        
+        #menu {
+            display: block;
+        }
+    }
+    transition: 0.2s;
+    .logo, .box-1, .box-2 {
+        transition: 0.2s;
+    }
+}
+
+#header[minimize="1"] {
+    @include header-fixed;
+    @include header-minimized;
+}
+
+/* A spacer behind the floating header */
+#header-spacer {
+    height: 120px;
+    @media only screen and (max-width: 800px) {
+        height: 60px;
+    }
+}

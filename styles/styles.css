@@ -4,15 +4,20 @@
 * {
   font-family: Roboto; }
 
+body {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  margin: 0; }
+
 /* Header expanded at the top of the page */
 #header {
   position: fixed;
-  margin: -8px -13px;
-  width: calc(100% + 10px);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  height: 120px;
-  background-color: #557bb9;
+  width: 100%;
+  height: 100px;
+  background-color: #4268a5;
   color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   /* Container positioning */
   /* Styles for link buttons */ }
   #header .logo {
@@ -22,8 +27,8 @@
     #header .logo path, #header .logo ellipse {
       fill: #ffffff; }
   #header .box-1 {
-    margin-top: 80px;
-    margin-left: 30px;
+    margin-top: 60px;
+    margin-left: 40px;
     float: left; }
   #header .box-2 {
     margin-top: 10px;
@@ -54,18 +59,26 @@
     margin-left: 10px;
     display: none; }
   #header #dropdown-nav {
-    background-color: #c1cfe5;
+    display: block;
+    position: fixed;
+    margin-top: 50px;
+    width: 100%;
+    height: 135px;
+    overflow: hidden;
+    background-color: #a6badb;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    display: none; }
+    transition: 0.2s; }
+    #header #dropdown-nav ul {
+      margin: 0; }
     #header #dropdown-nav li {
-      border-top: 1px solid #e9ecf1;
+      border-top: 1px solid #d1d8e2;
       background-color: transparent;
       padding: 6px;
       list-style: none;
       text-align: center;
       transition: 0.15s; }
       #header #dropdown-nav li a {
-        color: #223552;
+        color: #172338;
         font-size: 1.1em;
         text-decoration: none;
         transition: 0.15s; }
@@ -73,6 +86,8 @@
         background-color: rgba(0, 0, 0, 0.2); }
         #header #dropdown-nav li:hover a {
           color: #ffffff; }
+  #header #dropdown-nav[drop="0"] {
+    height: 0; }
 
 /* Minimized navigation bar */
 /* Responsive styles */
@@ -99,8 +114,7 @@
 
 #header[minimize="1"] {
   position: fixed;
-  margin: -8px -13px;
-  width: calc(100% + 10px);
+  width: 100%;
   height: 50px; }
   #header[minimize="1"] .logo {
     margin-top: -7px;
@@ -113,14 +127,70 @@
 
 /* A spacer behind the floating header */
 #header-spacer {
-  margin-bottom: -20px;
   height: 120px; }
   @media only screen and (max-width: 800px) {
     #header-spacer {
       height: 60px; } }
 
 #footer {
-  background-color: #000000;
-  color: #ffffff; }
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: #dddddd;
+  color: #636363;
+  font-size: 0.9em; }
+  #footer a {
+    color: #636363;
+    text-decoration: none;
+    padding: 6px 0; }
+    #footer a svg {
+      fill: #636363; }
+    #footer a:hover {
+      color: #161616; }
+      #footer a:hover svg {
+        fill: #161616; }
+  #footer .box-1, #footer .box-2 {
+    display: block;
+    width: 100%; }
+  #footer .box-1 {
+    height: 50px;
+    border-bottom: solid 1px #afafaf; }
+    #footer .box-1 .box-1 {
+      width: calc(50% - 25px);
+      float: left; }
+    #footer .box-1 .logo {
+      display: block;
+      margin-top: -20px;
+      width: 60px;
+      height: 60px;
+      float: left; }
+      #footer .box-1 .logo path, #footer .box-1 .logo ellipse {
+        fill: #636363; }
+      @media only screen and (max-width: 550px) {
+        #footer .box-1 .logo {
+          display: none; } }
+    #footer .box-1 #social-links {
+      float: right; }
+      #footer .box-1 #social-links a {
+        margin-left: 10px; }
+        #footer .box-1 #social-links a svg {
+          width: 30px;
+          height: 30px; }
+  #footer .box-2 {
+    margin-top: 10px; }
+    #footer .box-2 #support-links {
+      float: right; }
+      #footer .box-2 #support-links a {
+        margin-left: 10px; }
+  @media only screen and (max-width: 490px) {
+    #footer .box-1 {
+      height: 70px; }
+      #footer .box-1 #social-links {
+        margin-top: 30px; }
+    #footer .box-2 {
+      height: 50px; }
+      #footer .box-2 #support-links {
+        margin-top: 15px; } }
 
 /*# sourceMappingURL=styles.css.map */

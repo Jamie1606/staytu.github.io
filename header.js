@@ -4,14 +4,14 @@ var elementHeader;
 var elementMenu;
 var elementDropdown;
 
+var scroll = 0;
+
 function navigationBarEvent() {
     if(headerHome) {
         
     }
     else {
-        if (document.body.scrollTop < 50 &&
-            document.documentElement.scrollTop < 50)
-        {
+        if (scroll < 50) {
             elementHeader.setAttribute("minimize", "0");
         }
         else {
@@ -20,7 +20,22 @@ function navigationBarEvent() {
     }
 }
 
-window.onscroll = function() {navigationBarEvent()};
+var scrollEnabled = true;
+var scrollDisableDOMManip = false;
+
+window.onscroll = function() {
+    if(scrollEnabled) {
+        scroll = window.pageYOffset || document.documentElement.scrollTop;
+        navigationBarEvent();
+    }
+    else {
+        window.scrollTo(0, scroll);
+        if(scrollDisableDOMManip) {
+            scrollEnabled = true;
+            scrollDisableDOMManip = false;
+        }
+    }
+};
 
 
 // Dropdown content visibility functions
@@ -35,8 +50,9 @@ var searchDrop = {
 };
 
 function setDropdownVisibility(obj, b) {
-    document.getElementById(obj.id).style.display
-        = (b ? "block" : "none");
+    scrollEnabled = false;
+    scrollDisableDOMManip = true;
+    document.getElementById(obj.id).setAttribute("drop", b ? "1" : "0");
     obj.show = b;
 }
 
@@ -86,9 +102,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     nav2.innerHTML += "</ul>";
     
-    let spacer2 = document.createElement("div");
-    spacer2.style.height = "35px";
-    header.insertBefore(spacer2, nav2);
+    header.setAttribute("minimize", "0");
+    nav2.setAttribute("drop", "0");
     
     elementHeader = header;
     elementMenu = document.getElementById("menu");
