@@ -3,14 +3,13 @@ $theme1-fg: #ffffff;
 $theme2-bg: #444444;
 $theme2-fg: #ffffff;
 
-@mixin text-shadow {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
-}
-
-@mixin box-shadow {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .5);
-}
-
-@mixin svg-shadow {
-    filter: drop-shadow( 2px 2px 5px rgba(0, 0, 0, .5));
+@mixin theme-font {
+    @font-face {
+        font-family: Roboto;
+        src: url(roboto-regular.ttf);
+    }
+    
+    * {
+        font-family: Roboto;
+    }
 }

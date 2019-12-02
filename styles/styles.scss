@@ -1,13 +1,6 @@
 @import 'theme';
 
-@font-face {
-    font-family: Roboto;
-    src: url(roboto-regular.ttf);
-}
-
-* {
-    font-family: Roboto;
-}
+@include theme-font;
 
 body {
     display: block;

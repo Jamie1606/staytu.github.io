@@ -82,7 +82,7 @@
         height: 135px;
         overflow: hidden;
         background-color: lighten($bg, 30%);
-        @include box-shadow;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
         
         ul {
             margin: 0;
