@@ -1,0 +1,185 @@
+@font-face {
+  font-family: Roboto;
+  src: url(roboto-regular.ttf); }
+* {
+  font-family: Roboto; }
+
+body {
+  display: block;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  background-image: url("../images/form-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed; }
+
+form {
+  display: block;
+  margin: 50px auto;
+  width: calc(20vw + 220px);
+  padding: 50px 80px 70px 80px;
+  background-color: #ffffff;
+  font-size: 1.35em; }
+  form .logo {
+    width: 75px;
+    height: 75px;
+    margin-bottom: -25px;
+    margin-left: calc(100% - 75px); }
+  form h1 {
+    color: #5673a1;
+    font-size: 1.5em; }
+  form input, form select, form textarea {
+    font-size: 0.8em; }
+  @media only screen and (max-width: 800px) {
+    form {
+      font-size: 1.2em; } }
+  @media only screen and (max-width: 600px) {
+    form {
+      width: calc(80vw - 90px);
+      padding: 25px 50px 45px 50px;
+      font-size: 1.1em; } }
+  form label {
+    display: block;
+    margin-top: 24px;
+    margin-bottom: 8px; }
+  form input[type=text], form input[type=email],
+  form input[type=number], form input[type=password] {
+    width: calc(40% + 120px);
+    border: none;
+    border-bottom: solid 2px #ccc; }
+    form input[type=text]:focus, form input[type=email]:focus,
+    form input[type=number]:focus, form input[type=password]:focus {
+      outline: none;
+      border-bottom: solid 2px #3d6dba; }
+  form input[type=number]::-webkit-inner-spin-button,
+  form input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  form textarea {
+    width: 100%;
+    resize: none; }
+  form select {
+    width: calc(30% + 120px);
+    padding: 4px;
+    border: none;
+    background-color: #eee; }
+  form .multiple-checkboxes {
+    display: block; }
+    form .multiple-checkboxes div {
+      display: inline-block;
+      width: 190px;
+      padding: 6px 0;
+      font-size: 0.8em; }
+      form .multiple-checkboxes div input {
+        width: 1.2em;
+        height: 1.2em; }
+  form #passport-photo-display {
+    display: block;
+    width: 130px;
+    height: 130px;
+    background-color: #ddd;
+    background-size: cover;
+    background-image: url("../images/passport.svg");
+    margin-bottom: 10px; }
+  form button {
+    all: unset; }
+  form #signin, form #submit {
+    display: block;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    text-align: center;
+    background-color: #3d6dba;
+    color: #ffffff;
+    border-radius: 4px; }
+    form #signin:hover, form #submit:hover {
+      background-color: #7397d1; }
+  form a {
+    font-size: 0.9em; }
+
+#footer {
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 40px);
+  padding: 20px;
+  background-color: #dddddd;
+  color: #636363;
+  font-size: 0.9em; }
+  #footer a {
+    color: #636363;
+    text-decoration: none;
+    padding: 6px 0; }
+    #footer a svg {
+      fill: #636363; }
+    #footer a:hover {
+      color: #161616; }
+      #footer a:hover svg {
+        fill: #161616; }
+  #footer .box-1, #footer .box-2 {
+    display: block;
+    width: 100%; }
+  #footer .box-1 {
+    height: 50px;
+    border-bottom: solid 1px #afafaf; }
+    #footer .box-1 .box-1 {
+      width: calc(50% - 25px);
+      float: left; }
+    #footer .box-1 .logo {
+      display: block;
+      margin-top: -20px;
+      width: 60px;
+      height: 60px;
+      float: left; }
+      #footer .box-1 .logo path, #footer .box-1 .logo ellipse {
+        fill: #636363; }
+      @media only screen and (max-width: 550px) {
+        #footer .box-1 .logo {
+          display: none; } }
+    #footer .box-1 #social-links {
+      float: right; }
+      #footer .box-1 #social-links a {
+        margin-left: 10px; }
+        #footer .box-1 #social-links a svg {
+          width: 30px;
+          height: 30px; }
+  #footer .box-2 {
+    margin-top: 10px; }
+    #footer .box-2 #support-links {
+      float: right; }
+      #footer .box-2 #support-links a {
+        margin-left: 10px; }
+  @media only screen and (max-width: 490px) {
+    #footer .box-1 {
+      height: 70px; }
+      #footer .box-1 #social-links {
+        margin-top: 30px; }
+    #footer .box-2 {
+      height: 50px; }
+      #footer .box-2 #support-links {
+        margin-top: 15px; } }
+
+#footer-spacer {
+  height: 120px; }
+  @media only screen and (max-width: 490px) {
+    #footer-spacer {
+      height: 150px; } }
+
+#footer {
+  background-color: #444444;
+  color: #bfbfbf; }
+  #footer .box-1 .logo path, #footer .box-1 .logo ellipse {
+    fill: #bfbfbf; }
+  #footer a {
+    color: #bfbfbf; }
+    #footer a svg {
+      fill: #bfbfbf; }
+    #footer a:hover {
+      color: #ffffff; }
+      #footer a:hover svg {
+        fill: #ffffff; }
+
+/*# sourceMappingURL=form.css.map */

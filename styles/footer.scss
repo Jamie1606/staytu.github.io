@@ -96,3 +96,10 @@
         }
     }
 }
+
+#footer-spacer {
+    height: 120px;
+    @media only screen and (max-width: 490px) {
+        height: 150px;
+    }
+}

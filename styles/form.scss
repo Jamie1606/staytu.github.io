@@ -1,0 +1,157 @@
+@import 'theme';
+
+@include theme-font;
+
+body {
+    display: block;
+    position:relative;
+    min-height: 100vh;
+    margin:0;
+    background-image: url("../images/form-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+form {
+    display: block;
+    margin: 50px auto;
+    width: calc(20vw + 220px);
+    padding: 50px 80px 70px 80px;
+    background-color: #ffffff;
+    
+    .logo {
+        width: 75px;
+        height: 75px;
+        margin-bottom: -25px;
+        margin-left: calc(100% - 75px);
+    }    
+    h1 {
+        color: desaturate($theme1-bg, 20%);
+        font-size: 1.5em;
+    }
+    input, select, textarea {
+        font-size: 0.8em;
+    }
+    font-size: 1.35em;
+    
+    @media only screen and (max-width: 800px) {
+        font-size: 1.2em;
+    }
+    @media only screen and (max-width: 600px) {
+        width: calc(80vw - 90px);
+        padding: 25px 50px 45px 50px;
+        font-size: 1.1em;
+    }
+    
+    label {
+        display: block;
+        margin-top: 24px;
+        margin-bottom: 8px;
+    }
+    
+    input[type=text], input[type=email],
+    input[type=number], input[type=password]
+    {
+      width: calc(40% + 120px);
+      border: none;
+      border-bottom: solid 2px #ccc;
+      &:focus {
+        outline: none;
+        border-bottom: solid 2px $theme1-bg;
+      }
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button
+    { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+    
+    textarea {
+      width: 100%;
+      resize: none;
+    }
+
+    select {
+      width: calc(30% + 120px);
+      padding: 4px;
+      border: none;
+      background-color: #eee;
+    }
+    
+    .multiple-checkboxes {
+      div {
+        input {
+          width: 1.2em;
+          height: 1.2em;
+        }
+        display: inline-block;
+        width: 190px;
+        padding: 6px 0;
+        font-size: 0.8em;
+      }
+      display: block;
+    }
+    
+    #passport-photo-display {
+      display: block;
+      width: 130px;
+      height: 130px;
+      background-color: #ddd;
+      background-size: cover;
+      background-image: url("../images/passport.svg");
+      margin-bottom: 10px;
+    }
+    
+    button {
+      all: unset;
+    }
+    
+    #signin, #submit {
+      display: block;
+      width: 200px;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 16px;
+      text-align: center;
+      background-color: $theme1-bg;
+      color: $theme1-fg;
+      border-radius: 4px;
+      &:hover {
+        background-color: lighten($theme1-bg, 15%);
+      }
+    }
+    
+    a {
+      font-size: 0.9em;
+    }
+}
+
+@import 'footer';
+
+#footer {
+    background-color: $theme2-bg;
+    color: darken($theme2-fg, 25%);
+    
+    .box-1 .logo {
+      path, ellipse {
+        fill: darken($theme2-fg, 25%);
+      }
+    }
+    
+    a {
+        color: darken($theme2-fg, 25%);
+        svg {
+            fill: darken($theme2-fg, 25%);
+        }
+        &:hover {
+            color: $theme2-fg;
+            svg {
+                fill: $theme2-fg;
+            }
+        }
+    }
+}
