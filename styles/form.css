@@ -30,6 +30,8 @@ form {
   form h1 {
     color: #5673a1;
     font-size: 1.5em; }
+  form p, form li {
+    font-size: 0.9em; }
   form input, form select, form textarea {
     font-size: 0.8em; }
   @media only screen and (max-width: 800px) {
@@ -65,6 +67,9 @@ form {
     padding: 4px;
     border: none;
     background-color: #eee; }
+  form input[type=checkbox] {
+    width: 1.2em;
+    height: 1.2em; }
   form .multiple-checkboxes {
     display: block; }
     form .multiple-checkboxes div {
@@ -72,9 +77,6 @@ form {
       width: 190px;
       padding: 6px 0;
       font-size: 0.8em; }
-      form .multiple-checkboxes div input {
-        width: 1.2em;
-        height: 1.2em; }
   form #passport-photo-display {
     display: block;
     width: 130px;
@@ -84,8 +86,7 @@ form {
     background-image: url("../images/passport.svg");
     margin-bottom: 10px; }
   form button {
-    all: unset; }
-  form #signin, form #submit {
+    all: unset;
     display: block;
     width: 200px;
     margin-top: 10px;
@@ -96,10 +97,9 @@ form {
     background-color: #3d6dba;
     color: #ffffff;
     border-radius: 4px; }
-    form #signin:hover, form #submit:hover {
-      background-color: #7397d1; }
-  form a {
-    font-size: 0.9em; }
+    form button:hover {
+      background-color: #7397d1;
+      cursor: pointer; }
 
 #footer {
   position: absolute;

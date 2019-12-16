@@ -4,7 +4,7 @@
 
 body {
     display: block;
-    position:relative;
+    position: relative;
     min-height: 100vh;
     margin:0;
     background-image: url("../images/form-background.jpg");
@@ -31,6 +31,8 @@ form {
         color: desaturate($theme1-bg, 20%);
         font-size: 1.5em;
     }
+    p, li { font-size: 0.9em; }
+    
     input, select, textarea {
         font-size: 0.8em;
     }
@@ -80,13 +82,14 @@ form {
       border: none;
       background-color: #eee;
     }
+        
+    input[type=checkbox] {
+      width: 1.2em;
+      height: 1.2em;
+    }
     
     .multiple-checkboxes {
       div {
-        input {
-          width: 1.2em;
-          height: 1.2em;
-        }
         display: inline-block;
         width: 190px;
         padding: 6px 0;
@@ -107,9 +110,6 @@ form {
     
     button {
       all: unset;
-    }
-    
-    #signin, #submit {
       display: block;
       width: 200px;
       margin-top: 10px;
@@ -122,11 +122,8 @@ form {
       border-radius: 4px;
       &:hover {
         background-color: lighten($theme1-bg, 15%);
+        cursor: pointer;
       }
-    }
-    
-    a {
-      font-size: 0.9em;
     }
 }
 
