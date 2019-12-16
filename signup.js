@@ -1,5 +1,5 @@
 var xhttp = new XMLHttpRequest();
-var formURL = "https://script.google.com/macros/s/AKfycbzCkn9IPJjuKdjJPk6txJ7M08BzPhNIMWHQgJXUXs8/dev";
+var formURL = "https://script.google.com/macros/s/AKfycbxtmT3iH-AP5NC1Z3dmOFZRimW7fbD8ThAKrun5Ni0/dev";
 
 var canvas = document.createElement('canvas');
 canvas.width = 512;
@@ -49,7 +49,6 @@ function submitMemberForm() {
     
     const param = {
         func: "signup",
-        callback: "displayResponseForm",
         email: form["email"].value,
         name: form["name"].value,
         id: "",
@@ -104,6 +103,7 @@ function updatePassportDisplay() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("warning").style.display = "none";
     showForm("signup-form");
     let imageInput = document.getElementById("passport-photo");
     imageInput.addEventListener('change', updatePassportDisplay);
