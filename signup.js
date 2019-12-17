@@ -1,5 +1,4 @@
-var xhttp = new XMLHttpRequest();
-var formURL = "https://script.google.com/macros/s/AKfycbwb23G192a1eJd4D-N1SWP1ZKDKRdYkKiBE-bW3txOq75B9Rxw/exec";
+var formURL = "https://script.google.com/macros/s/AKfycbxtmT3iH-AP5NC1Z3dmOFZRimW7fbD8ThAKrun5Ni0/dev";
 
 var canvas = document.createElement('canvas');
 canvas.width = 512;
@@ -14,16 +13,22 @@ const getAsUriParameters = obj => Object
         .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(obj[k]))
         .join('&');
 
-function showForm(id) {
-    let forms = document.getElementsByTagName("form");
-    for(var i=0; i<forms.length; i++) {
-        if(forms[i].id == id)
-            forms[i].style.display = "block";
-        else
-            forms[i].style.display = "none";
-    }
+
+function postJump(param){
+    var form = document.createElement("form");
+    form.method = "post";
+    form.action = formURL;
+    form.style.display = "none";
+    Object.keys(param).forEach(function (key) {
+        form.innerHTML += '<input type="hidden" name="' + key +
+                          '" value="' + param[key] + '" >';
+    });
+    document.body.appendChild(form);
+    form.submit();
+    form.remove();
 }
 
+            
 function combo(thelist) {
     let element = thelist.previousElementSibling;
     var idx = thelist.selectedIndex;
@@ -31,13 +36,14 @@ function combo(thelist) {
     element.value = content;
 }
 
+
 /*
  * Function invoked from form submit button.
  * Collects datas like name, email, place them in a JSON.
  * Makes a post request without CORS by JSONP.
  */
 function submitMemberForm() {
-    let form = document.getElementById("signup-form");
+    let form = document.getElementsByTagName("form")[0];
     let interestBoxes = document.getElementById("interest").children;
     let interestValue = "";
     for(var i=0; i<interestBoxes.length; i++) {
@@ -49,6 +55,7 @@ function submitMemberForm() {
     
     const param = {
         func: "signup",
+        formresp: "",
         email: form["email"].value,
         name: form["name"].value,
         phone: form["phone"].value,
@@ -62,16 +69,16 @@ function submitMemberForm() {
         photo: photoDataURL
     }
     
-    google.script.run.withSuccessHandler(onFormResponse)
-          .submitMemberForm(param);
+    try {
+      postJump(param);
+    }
+    catch(err) {
+      console.log(err);
+    }
+    
+    return false;
 }
 
-
-function onFormResponse(resp) {
-    let content = document.getElementById("form-response-content");
-    content.innerHTML = resp;
-    showForm("response-form");
-}
 
 // Preview image update
 function updatePassportDisplay() {
@@ -99,7 +106,6 @@ function updatePassportDisplay() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    showForm("signup-form");
     let imageInput = document.getElementById("passport-photo");
     imageInput.addEventListener('change', updatePassportDisplay);
 }, false);
