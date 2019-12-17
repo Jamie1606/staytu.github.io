@@ -23,8 +23,9 @@
     <input type="text" name="name" placeholder="Your name" required><br>
     <label>Email</label>
     <input type="email" name="email" placeholder="example@gmail.com" required><br>
-    <label>Roll No</label>
+    <label>Phone</label>
     <input type="text" name="phone" pattern="[0-9]{10,}" required>
+    <label>Roll No</label>
     <input type="text" name="roll" placeholder="Your roll number"><br>
     <label>Batch</label>
     <input type="number" name="batch" placeholder="?th batch" required/>

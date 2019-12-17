@@ -58,25 +58,20 @@ function submitMemberForm() {
         major: form["major"].value,
         interest: interestValue,
         description: form["description"].value,
-        why: form["why"].value
+        why: form["why"].value,
+        photo: photoDataURL
     }
     
-    xhttp.open("POST", formURL, true);
-    xhttp.send(getAsUriParameters(param) + "&photo=" + photoDataURL);
-    
-    let button = document.getElementById("signup-button");
-    button.disabled = true;
-    
-    return false;
+    google.script.run.withSuccessHandler(onFormResponse)
+          .submitMemberForm(param);
 }
 
-xhttp.onreadystatechange = function() {
-    if(this.readyState == 4 && this.status == 200) {
-        let content = document.getElementById("form-response-content");
-        content.innerHTML = this.responseText;
-        showForm("response-form");
-    }
-};
+
+function onFormResponse(resp) {
+    let content = document.getElementById("form-response-content");
+    content.innerHTML = resp;
+    showForm("response-form");
+}
 
 // Preview image update
 function updatePassportDisplay() {
