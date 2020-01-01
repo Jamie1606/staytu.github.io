@@ -1,0 +1,649 @@
+html, body
+{
+	margin: 0;
+	padding: 0;
+}
+.tutorial
+{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+.tutorial-header
+{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 38px;
+	padding: 15px 0;
+}
+.newtutorial
+{
+	width: 1200px;
+	margin: 0 auto;
+	height: 530px;
+	margin-top: 20px;
+	overflow: hidden;
+}
+.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+{
+	float: left;
+	display: inline-block;
+	width: 370px;
+	height: 475px;
+	margin-left: 30px;
+	border: 1px dotted #000;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 3px 3px 5px 1px #777;
+}
+.newtutorial .newtutorialbox-one
+{
+	margin-left: 0px;
+}
+.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+{
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+}
+.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+{
+	width: 100%;
+	height: 300px;
+}
+.newtutorial .newtutorialbox>label, .newtutorial .newtutorialbox-one>label
+{
+	margin-top: 10px;
+	display: block;
+	font-size: 27px;
+	font-weight: bold;
+	text-align: center;
+}
+.newtutorial .newtutorialbox>p, .newtutorial .newtutorialbox-one>p
+{
+	font-size: 17px;
+	padding: 0 10px;
+	text-align: center;
+}
+.newtutorial .newtutorialbox>a, .newtutorial .newtutorialbox-one>a
+{
+	display: inline-block;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 40px;
+	color: blue; 	/*change*/
+	font-weight: bold;
+	background-color: #eee;	/*change*/
+	text-decoration: none;
+}
+.newtutorial .newtutorialbox h3, .newtutorial .newtutorialbox-one h3
+{
+	position: absolute;
+	font-size: 18px;
+	top: -4px;
+	left: -23px;
+	width: 100px;
+	text-align: center;
+	border: 1px dotted #fff;	/*change*/
+	background-color: #fff;		/*change*/
+	z-index: 10000;
+	transform: rotate(-45deg);
+	color: blue;	/*change*/
+}
+.tutorial .hr-one
+{
+	border: 2px dotted #aaa;	/*change*/
+}
+.oldtutorial
+{
+	width: 1200px;
+	margin: 0 auto;
+	height: 330px;
+	margin-top: 30px;
+}
+.oldtutorial .tutorial-partone
+{
+	display: inline-block;
+	width: 470px;
+	height: 300px;
+	overflow: hidden;
+	box-shadow: 2px 2px 10px 3px #777;
+}
+.oldtutorial .tutorial-partone>img
+{
+	width: 100%;
+	height: 300px;
+	cursor: pointer;
+}
+.oldtutorial .tutorial-partone>img:hover
+{
+	transform: scale(1.2);
+	transition: all .7s;
+}
+.oldtutorial .tutorial-parttwo
+{
+	display: inline-block;
+	width: 670px;
+	height: 300px;
+	overflow: hidden;
+	float: right;
+}
+.oldtutorial .tutorial-parttwo>label
+{
+	padding-top: 15px;
+	font-size: 27px;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+}
+.oldtutorial .tutorial-parttwo>p
+{
+	font-size: 17px;
+	padding: 0 40px;
+	text-align: center;
+}
+.oldtutorial .tutorial-parttwo>div
+{
+	text-align: center;
+}
+.oldtutorial .tutorial-parttwo a
+{
+	margin-top: 15px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 20px;
+	width: 150px;
+	height: 50px;
+	text-align: center;
+	font-size: 22px;
+	line-height: 50px;
+	color: blue; 	/*change*/
+	font-weight: bold;
+	background-color: #ddd;	/*change*/
+	text-decoration: none;
+}
+.oldtutorial .tutorial-parttwo a:hover
+{
+	border: 1px dotted #000;	/*change*/
+}
+.tutorial-search
+{
+	width: 1200px;
+	padding-top: 20px;
+	margin: 0 auto;
+}
+.tutorial-search>label
+{
+	font-size: 18px;
+	float: right;
+}
+.tutorial-search>input
+{
+	margin-left: 20px;
+	width: 250px;
+	float: right;
+	border-radius: 3px;
+}
+.tutorial-search>button
+{
+	border: 1px dotted #000;
+	cursor: pointer;
+	text-align: center;
+	line-height: 25px;
+	width: 80px;
+	height: 30px;
+	float: right;
+	border-radius: 5px;
+	margin-right: 85px;
+}
+/*------------------------------------*/
+@media screen and (max-width: 1250px)
+{
+	.tutorial-header
+	{
+		font-size: 34px;
+		padding: 10px 0;
+	}
+	.newtutorial
+	{
+		width: 1050px;
+		height: 490px;
+	}
+	.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+	{
+		width: 323.75px;
+		height: 475px;
+		margin-left: 26.25px;
+	}
+	.newtutorial .newtutorialbox-one
+	{
+		margin-left: 0px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 280px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 280px;
+	}
+	.oldtutorial
+	{
+		width: 1050px;
+		height: 330px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 411.25px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		width: 586.25px;
+	}
+	.tutorial-search
+	{
+		width: 1050px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 1100px)
+{
+	.tutorial-header
+	{
+		font-size: 32px;
+	}
+	.newtutorial
+	{
+		width: 950px;
+		height: 470px;
+	}
+	.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+	{
+		width: 292.92px;
+		height: 455px;
+		margin-left: 23.75px;
+	}
+	.newtutorial .newtutorialbox-one
+	{
+		margin-left: 0px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 260px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 260px;
+	}
+	.oldtutorial
+	{
+		width: 950px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 372.08px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		width: 530.42px;
+	}
+	.tutorial-search
+	{
+		width: 950px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 1000px)
+{
+	.tutorial-header
+	{
+		font-size: 30px;
+		padding: 10px 0;
+	}
+	.newtutorial
+	{
+		width: 850px;
+		margin: 0 auto;
+		height: 440px;
+		margin-top: 20px;
+		overflow: hidden;
+	}
+	.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+	{
+		width: 262.08px;
+		height: 420px;
+		margin-left: 21.25px;
+	}
+	.newtutorial .newtutorialbox-one
+	{
+		margin-left: 0px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 235px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 235px;
+	}
+	.newtutorial .newtutorialbox>label, .newtutorial .newtutorialbox-one>label
+	{
+		font-size: 26px;
+	}
+	.newtutorial .newtutorialbox>p, .newtutorial .newtutorialbox-one>p
+	{
+		font-size: 16px;
+	}
+	.newtutorial .newtutorialbox>a, .newtutorial .newtutorialbox-one>a
+	{
+		font-size: 21px;
+	}
+	.oldtutorial
+	{
+		width: 850px;
+		height: 330px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 332.92px;
+		height: 300px;
+	}
+	.oldtutorial .tutorial-partone>img
+	{
+		width: 100%;
+		height: 300px;
+	}
+	.oldtutorial .tutorial-partone>img:hover
+	{
+		transform: scale(1.2);
+		transition: all .7s;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		display: inline-block;
+		width: 474.58px;
+		height: 300px;
+		overflow: hidden;
+		float: right;
+	}
+	.oldtutorial .tutorial-parttwo>label
+	{
+		padding-top: 0px;
+		font-size: 25px;
+	}
+	.oldtutorial .tutorial-parttwo>p
+	{
+		font-size: 17px;
+		padding: 0 35px;
+	}
+	.oldtutorial .tutorial-parttwo a
+	{
+		margin-top: 10px;
+		width: 130px;
+		height: 45px;
+		font-size: 20px;
+		line-height: 45px;
+	}
+	.tutorial-search
+	{
+		width: 850px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 900px)
+{
+	.tutorial-header
+	{
+		font-size: 28px;
+		padding: 8px 0;
+	}
+	.newtutorial
+	{
+		width: 600px;
+		height: 1530px;
+	}
+	.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+	{
+		clear: both;
+		display: block;
+		width: 98.5%;
+		height: 475px;
+		margin: 0 0;
+		margin-top: 45px;
+	}
+	.newtutorial .newtutorialbox-one
+	{
+		margin-top: 0;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 320px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 320px;
+	}
+	.newtutorial .newtutorialbox>label, .newtutorial .newtutorialbox-one>label
+	{
+		font-size: 26px;
+	}
+	.newtutorial .newtutorialbox>p, .newtutorial .newtutorialbox-one>p
+	{
+		font-size: 17px;
+		padding: 0 30px;
+	}
+	.newtutorial .newtutorialbox>a, .newtutorial .newtutorialbox-one>a
+	{
+		width: 100%;
+		height: 40px;
+		text-align: center;
+		font-size: 22px;
+		line-height: 40px;
+		background-color: transparent;
+	}
+	.newtutorial .newtutorialbox>a::after, .newtutorial .newtutorialbox-one>a::after
+	{
+		content: " For This Tutorial";
+	}
+	.tutorial .hr-one
+	{
+		border: 2px dotted #aaa;
+	}
+	.oldtutorial
+	{
+		width: 750px;
+		margin: 0 auto;
+		height: 600px;
+		margin-top: 30px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		display: block;
+		margin: 0 auto;
+		width: 500px;
+		height: 300px;
+		margin-bottom: 15px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		display: block;
+		margin: 0 auto;
+		width: 600px;
+		height: 300px;
+		float: none;
+		clear: both;
+	}
+	.oldtutorial .tutorial-parttwo>label
+	{
+		padding-top: 15px;
+		font-size: 25px;
+	}
+	.oldtutorial .tutorial-parttwo>p
+	{
+		font-size: 17px;
+		padding: 0 40px;
+		text-align: center;
+	}
+	.oldtutorial .tutorial-parttwo a
+	{
+		width: 120px;
+		height: 40px;
+		font-size: 18px;
+		line-height: 40px;
+	}
+	.tutorial-search
+	{
+		width: 750px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 800px)
+{
+	.tutorial-header
+	{
+		font-size: 27px;
+		padding: 7px 0;
+	}
+	.newtutorial
+	{
+		width: 450px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 300px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 300px;
+	}
+	.newtutorial .newtutorialbox>label, .newtutorial .newtutorialbox-one>label
+	{
+		font-size: 25px;
+	}
+	.tutorial .hr-one
+	{
+		border: 2px dotted #aaa;
+	}
+	.oldtutorial
+	{
+		width: 650px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 400px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		width: 550px;
+	}
+	.oldtutorial .tutorial-parttwo>label
+	{
+		padding-top: 10px;
+	}
+	.tutorial-search
+	{
+		width: 650px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 700px)
+{
+	.newtutorial
+	{
+		height: 1480px;
+	}
+	.newtutorial .newtutorialbox, .newtutorial .newtutorialbox-one
+	{
+		width: 98.5%;
+		height: 460px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 280px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 280px;
+	}
+	.tutorial .hr-one
+	{
+		border: 2px dotted #aaa;
+	}
+	.oldtutorial
+	{
+		width: 550px;
+		margin: 0 auto;
+		height: 640px;
+		margin-top: 30px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 450px;
+		margin-bottom: 10px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		width: 450px;
+		height: 350px;
+	}
+	.tutorial-search
+	{
+		width: 550px;
+	}
+	.tutorial-search>label
+	{
+		font-size: 17px;
+	}
+	.tutorial-search>input
+	{
+		width: 200px;
+	}
+	.tutorial-search>button
+	{
+		margin-right: 70px;
+	}
+}
+/*------------------------------------*/
+@media screen and (max-width: 600px)
+{
+	.newtutorial
+	{
+		width: 400px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image, .newtutorial .newtutorialbox-one .newtutorial-image
+	{
+		height: 250px;
+	}
+	.newtutorial .newtutorialbox .newtutorial-image img, .newtutorial .newtutorialbox-one .newtutorial-image img
+	{
+		height: 250px;
+	}
+	.tutorial .hr-one
+	{
+		border: 2px dotted #aaa;
+	}
+	.oldtutorial
+	{
+		width: 400px;
+		height: 720px;
+	}
+	.oldtutorial .tutorial-partone
+	{
+		width: 350px;
+		height: 300px;
+	}
+	.oldtutorial .tutorial-parttwo
+	{
+		width: 350px;
+		height: 420px;
+	}
+	.tutorial-search
+	{
+		width: 400px;
+	}
+}
